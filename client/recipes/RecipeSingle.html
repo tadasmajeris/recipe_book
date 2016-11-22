@@ -3,7 +3,7 @@
   <p>{{recipe.desc}}</p>
   <p>
     {{#each recipe.ingredients}}
-      <span class='ingredient'>{{name}} - {{amount}}</span>
+      <span class='ingredient'>{{name}}{{#if amount}} - {{amount}}{{/if}}</span>
     {{/each}}
   </p>
 </template>

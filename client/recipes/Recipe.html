@@ -6,13 +6,18 @@
         <p>{{desc}}</p>
         <p>
           {{#each ingredients}}
-            <span class='ingredient'>{{name}} - {{amount}}</span>
+            <span class='ingredient'>{{name}}{{#if amount}} - {{amount}}{{/if}}</span>
           {{/each}}
         </p>
       </a>
 
-      <button class="btn-primary toggle-menu">Add To Menu</button>
-      <button class="btn-deny toggle-menu">Remove From Menu</button>
+      {{#if inMenu}}
+        <button class="btn-deny toggle-menu">Remove From Menu</button>
+      {{else}}
+        <button class="btn-primary toggle-menu">Add To Menu</button>
+      {{/if}}
+
+      {{> quickForm collection='Recipes' id=updateRecipeId type='update' doc=this autosave=true}}
     </article>
 
 </template>
