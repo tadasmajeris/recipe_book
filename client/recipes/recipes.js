@@ -4,8 +4,10 @@ Meteor.subscribe('allUsers');
 Template.RecipesList.helpers({
   recipes(){
     return Recipes.find();
-  },
+  }
+});
 
+Template.Recipe.helpers({
   findAuthor(userId){
     const user = Meteor.users.findOne(userId);
     if (user.hasOwnProperty('emails')) {
