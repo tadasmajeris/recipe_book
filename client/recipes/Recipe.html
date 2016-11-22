@@ -1,13 +1,18 @@
 <template name='Recipe'>
-  <a href="/recipe/{{_id}}">
-    <article class="recipe">
-      <h3>{{name}}</h3>
-      <p>{{desc}}</p>
-      <p>
-        {{#each ingredients}}
-          <span class='ingredient'>{{name}} - {{amount}}</span>
-        {{/each}}
-      </p>
+
+    <article class="recipe {{#if inMenu}}in-menu{{/if}}">
+      <a href="/recipe/{{_id}}">
+        <h3>{{name}}</h3>
+        <p>{{desc}}</p>
+        <p>
+          {{#each ingredients}}
+            <span class='ingredient'>{{name}} - {{amount}}</span>
+          {{/each}}
+        </p>
+      </a>
+
+      <button class="btn-primary toggle-menu">Add To Menu</button>
+      <button class="btn-deny toggle-menu">Remove From Menu</button>
     </article>
-  </a>
+
 </template>
