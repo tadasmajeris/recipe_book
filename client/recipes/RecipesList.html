@@ -1,7 +1,11 @@
 <template name='RecipesList'>
   <section class="recipes">
-    {{#each recipes}}
-      {{> Recipe}}
-    {{/each}}
+    {{#if Template.subscriptionsReady}}
+      {{#each recipes}}
+        {{> Recipe}}
+      {{/each}}
+    {{else}}
+      <p>Loading recipes...</p>
+    {{/if}}
   </section>
 </template>
