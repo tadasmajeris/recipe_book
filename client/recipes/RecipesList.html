@@ -1,0 +1,8 @@
+<template name='RecipesList'>
+  <div class="recipes-list-div">
+    {{#each recipes}}
+      <h3>{{name}} by {{findAuthor(author)}}</h3>
+      <p>{{desc}}</p>
+    {{/each}}
+  </div>
+</template>
