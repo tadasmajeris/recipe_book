@@ -1,4 +1,11 @@
 <template name='Recipes'>
-  {{> NewRecipe}}
+
+  {{#if $.Session.get 'newRecipe'}}
+    {{> NewRecipe}}
+  {{else}}
+    <button class="new-recipe">New Recipe</button>
+
+  {{/if}}
+
   {{> RecipesList}}
 </template>
